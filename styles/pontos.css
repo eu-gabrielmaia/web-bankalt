@@ -74,3 +74,11 @@
         padding: 20px;
     }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+    .pontos-box{
+        & p, li{
+            color: var(--light);
+        }
+    }
+}

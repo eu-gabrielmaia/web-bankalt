@@ -176,3 +176,24 @@ input[type="submit"]:hover{
     }
   }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+    .secao-ajuda {
+      & .ajuda-titulo{
+        color: var(--light);
+      }
+    }
+
+    .secao-pergunta {
+      & .pergunta-titulo, h2{
+      
+        color: var(--light);
+      }
+    }
+
+    .secao-mensagem{
+      & label, #enviarMensagem{
+        color: var(--light);
+      }
+    }
+}

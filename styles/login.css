@@ -124,3 +124,19 @@
         }
     }
 }
+
+@media screen and (prefers-color-scheme: dark){
+    .secao-login{
+        & .login{
+            border: 1px solid var(--azul);
+        }
+
+        & h1, label, p, #btn-login, .texto, a{
+            color: var(--light);
+        }
+    }
+    
+    .login{
+        background: var(--roxo);
+    }
+}

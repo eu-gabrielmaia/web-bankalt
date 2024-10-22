@@ -113,3 +113,15 @@
         flex-direction: column;
     }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+    
+    section{
+
+        & .contas-box-destaque .botao{
+            background-color: var(--light);
+            color: var(--roxo);
+        }
+        
+    }
+}

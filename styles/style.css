@@ -74,6 +74,67 @@ button{
     z-index: 1;
 }
 
+.header .destaques{
+    display: flex;
+    gap: 20px;
+}
+
+/* From Uiverse.io by catraco */ 
+/*------ Settings ------*/
+.container {
+    --color: var(--cinza);
+    --size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+  }
+  
+  .container .moon {
+    position: absolute;
+    animation: keyframes-fill .5s;
+  }
+  
+  .container .sun {
+    position: absolute;
+    display: none;
+    animation: keyframes-fill .5s;
+  }
+  
+  /* ------ On check event ------ */
+  .container input:checked ~ .moon {
+    display: none;
+  }
+  
+  .container input:checked ~ .sun {
+    display: block;
+  }
+  
+  /* ------ Hide the default checkbox ------ */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* ------ Animation ------ */
+  @keyframes keyframes-fill {
+    0% {
+      transform: rotate(-360deg) scale(0);
+      opacity: 0;
+    }
+  
+    75% {
+      transform: rotate(25deg);
+    }
+  }
+
 .nav-lista{
     display: flex;
     align-items: center;
@@ -117,7 +178,6 @@ header nav a{
 .nav-botao:hover{
     background-color: var(--azul);
 }
-
 
 .nav-menu-texto{
     display: flex;
@@ -256,11 +316,6 @@ header nav a{
 .secao-principal .titulo{
     font-size: 3em;
     font-weight: 700;
-    /*background-image: linear-gradient(to bottom, var(--azul), var(--roxo));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: white;*/
 }
 
 .texto-logo img{
@@ -749,15 +804,97 @@ hr{
     }
 }
 
-/*@media screen and (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
     :root{
-        --branco: var(--cinza-escuro);
-        --preto: rgba(240,239,244,1);
+        --dark: rgba(26, 26, 26, 1);
+        --light: rgba(240,239,244,1);
+        --branco: var(--dark);
+    }
+
+    ::selection{
+        background-clip: var(--degrade-roxo);
+    }
+
+    body{
+        background: var(--dark);
+    }
+
+    .header{
+        background: rgba(26, 26, 26, 0.4);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         
+        & nav ul li a, li{
+            color: var(--light);
+        }
+    }
+
+    .burger span {
+        background: var(--light);
+    }
+
+    .nav-lista-mobile{
+        border: 1px solid var(--cinza);
+        border-radius: 5px;
+    }
+
+    section{
+        & h1, h2, p{
+            color: var(--light);
+        }
+    }
+
+    .secao-principal {
+        & .titulo{
+            background: linear-gradient(to right, var(--azul), var(--roxo));
+            display: inline-block;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        & .texto {
+            color: var(--light);
+        }
+
+        & .conta .botao-conta{
+            color: var(--light);
+        }
+    }
+
+    .secao-descricao {
+        
+        & .botoes{
+            & .botao-mais, .acao-mensagem{
+                color: var(--light);
+            }
+        }
+    } 
+
+    .secao-destaque{
+        background: #000000;
+    }
+
+    .secao-central-ajuda{
+        background: var(--verde-escuro);
+
+        & .titulo, .texto, .botao{
+            color: var(--light);
+        }
+
+        & .botao{
+            background: var(--verde);
+            box-shadow: 0px 0px 15px var(--verde-agua);
+        }
     }
 
     .footer{
-        color: var(--cinza);
-        background-color: var(--branco);
+
+        & .footer-item{
+            & div, a, span{
+                color: var(--cinza);
+            }
+        }
+        
     }
-}*/
+}

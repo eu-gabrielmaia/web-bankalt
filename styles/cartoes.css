@@ -210,3 +210,11 @@
         }
     }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+    .secao-cartao-premium{
+        & h3{
+            color: var(--light);
+        }
+    }
+}
