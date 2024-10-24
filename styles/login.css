@@ -20,14 +20,12 @@
         justify-content: center;
         background-color: var(--branco);
         border-radius: 10px;
-        color: var(--branco);
         -webkit-box-shadow: -2px 2px 25px -12px var(--branco);
         -moz-box-shadow: -2px 2px 25px -12px var(--branco);
         box-shadow: -2px 2px 25px -12px var(--branco);
 
         & .login-titulo{
             font-size: 1.5em;
-            color: var(--roxo);
             font-weight: 700;
             margin-bottom: 15px;
         }
@@ -99,6 +97,8 @@
             text-decoration: underline 2.5px var(--azul); 
         }
     }
+
+    
 }
 
 @media (max-width: 1000px) {
@@ -129,14 +129,11 @@
     .secao-login{
         & .login{
             border: 1px solid var(--azul);
+            background: var(--cinza-escuro);
         }
 
         & h1, label, p, #btn-login, .texto, a{
             color: var(--light);
         }
-    }
-    
-    .login{
-        background: var(--roxo);
     }
 }
