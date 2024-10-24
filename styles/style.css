@@ -40,6 +40,7 @@ body{
     justify-content: space-between;
     font-size: 16px;
     color: var(--roxo);
+    min-height: 100vh;
 }
 
 ::selection {
@@ -812,7 +813,7 @@ hr{
     }
 
     ::selection{
-        background-clip: var(--degrade-roxo);
+        color: var(--light);
     }
 
     body{

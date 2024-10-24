@@ -1,6 +1,9 @@
 const inputCpf = document.querySelector('#cpf');
+const inputSenha = document.querySelector('#senha');
 const btnLogin = document.querySelector('#btn-login');
 const mensagemInvalido = document.querySelector('.input-invalido');
+const mensagemCpfInvalido = document.querySelector('.cpf-invalido');
+const mensagemSenhaInvalida = document.querySelector('.senha-invalida');
 
 function validaCPF (cpf){
     cpf = cpf.replace(/[^\d]+/g, '');
@@ -49,11 +52,23 @@ inputCpf.addEventListener('keypress', ()=>{
 
 
 btnLogin.addEventListener('click', ()=>{
-    const cpf = inputCpf.value
-    if (validaCPF(cpf)) {
+    const cpf = inputCpf.value;
+    const senha = inputSenha.value;
+    if(validaCPF(cpf) && senha){
         mensagemInvalido.classList.add('input-hidden');
-        console.log("CPF válido");
-    } else {
-        mensagemInvalido.classList.remove('input-hidden');
+        let resultado = confirm("Quer ser direciado ao QR CODE?");
+        if (resultado == true) {
+            location.replace("mobile.html", "_blank");
+        }
+        else{
+            alert("Processo cancelado!");
+        }
+        
+    }
+    if(!validaCPF(cpf)){
+        mensagemCpfInvalido.classList.remove('input-hidden');
+    }
+    if(!senha){
+        mensagemSenhaInvalida.classList.remove('input-hidden');
     }
 })

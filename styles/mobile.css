@@ -1,0 +1,65 @@
+@import url(style.css);
+
+body{
+    background: var(--roxo);
+}
+
+.code{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.code-descricao{
+    margin: 5px;
+}
+
+.code-descricao-titulo{
+    font-size: 1.75em;
+    font-weight: 800;
+}
+
+.code-descricao-texto{
+    font-size: 1.25em;
+    max-width: 800px;
+}
+
+.code-comandos{
+    margin: 15px 0;
+}
+
+.btn-code{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: var(--roxo);
+    color: var(--light);
+}
+
+.btn-code:hover{
+    animation: ease-in 1s;
+    background: var(--azul);
+}
+
+.btn-code-descricao{
+    margin-top: 15px;
+}
+
+.box-code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box-code img{
+    padding: 15px;
+    border: 1px solid var(--azul);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+@media screen and (prefers-color-scheme: dark){
+    body{
+        background: var(--dark);
+    }
+}
