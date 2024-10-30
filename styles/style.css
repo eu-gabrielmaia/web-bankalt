@@ -32,6 +32,11 @@
     --vermelho: rgba(250, 2, 2, 1);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+
 body {
     background-color: var(--branco);
     font-family: 'Poppins';
@@ -728,16 +733,11 @@ hr {
         background-color: var(--branco);
         position: fixed;
         left: 0;
-        width: 100%;
-        left: -100%;
-        margin: 25px;
+        width: 95%;
+        margin: 25px 10px 0px;
     }
 
     .drop-down-mobile {
-        /*
-        display: none;
-        position: absolute;
-        */
         background-color: var(--roxo);
         width: 80%;
         position: static;
