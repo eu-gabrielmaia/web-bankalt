@@ -1,65 +1,87 @@
 @import url(style.css);
 
-body{
+body {
     background: var(--roxo);
+    color: var(--branco);
 }
 
-.code{
+.code {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    min-height: 100vh;
 }
 
-.code-descricao{
+.code-descricao {
     margin: 5px;
 }
 
-.code-descricao-titulo{
-    font-size: 1.75em;
+.code-descricao-titulo {
+    font-size: 2em;
     font-weight: 800;
 }
 
-.code-descricao-texto{
+.code-descricao-texto {
     font-size: 1.25em;
     max-width: 800px;
 }
 
-.code-comandos{
+.code-comandos {
     margin: 15px 0;
 }
 
-.btn-code{
-    padding: 5px 10px;
+.btn-code {
+    padding: 5px 20px;
     border-radius: 5px;
-    background: var(--roxo);
+    background: var(--verde);
     color: var(--light);
 }
 
-.btn-code:hover{
+.btn-code:hover {
     animation: ease-in 1s;
-    background: var(--azul);
+    background: var(--vermelho);
+    box-shadow: 0px 0px 15px var(--vermelho);
 }
 
-.btn-code-descricao{
+.btn-code-descricao {
+    font-size: 0.75em;
     margin-top: 15px;
 }
 
-.box-code{
+.box-code {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.box-code img{
+.box-code img {
     padding: 15px;
     border: 1px solid var(--azul);
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-@media screen and (prefers-color-scheme: dark){
-    body{
+@media (max-width: 768px) {
+    .code {
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
         background: var(--dark);
+    }
+
+    .btn-code {
+        background: var(--roxo);
+        color: var(--light);
+    }
+
+    .btn-code:hover {
+        background: var(--azul);
+        box-shadow: 0px 0px 15px var(--azul);
     }
 }
