@@ -51,19 +51,30 @@ inputCpf.addEventListener('keypress', () => {
 })
 
 
-btnLogin.addEventListener('click', () => {
+btnLogin.addEventListener('click', async () => {
     const cpf = inputCpf.value;
     const senha = inputSenha.value;
+    const resposta = await getCodigoAPI(cpf);
     if (validaCPF(cpf) && senha) {
-        mensagemInvalido.classList.add('input-hidden');
-        let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
-        if (resultado == true) {
-            location.replace("mobile.html", "_blank");
+        try{
+            if (resposta.cpf === cpf && resposta.senha === senha) {
+                mensagemSenhaInvalida.classList.add('input-hidden');
+                let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
+                if (resultado == true) {
+                    location.replace("mobile.html", "_blank");
+                }
+                else {
+                    alert("OK, processo cancelado!");
+                }
+            }
+            if (resposta.senha != senha) {
+                mensagemSenhaInvalida.classList.remove('input-hidden');
+                mensagemSenhaInvalida.textContent = "Tente outra senha";
+            }
         }
-        else {
-            alert("Processo cancelado!");
+        catch(err){
+            console.log(err);
         }
-
     }
     if (!validaCPF(cpf)) {
         mensagemCpfInvalido.classList.remove('input-hidden');
@@ -72,3 +83,18 @@ btnLogin.addEventListener('click', () => {
         mensagemSenhaInvalida.classList.remove('input-hidden');
     }
 })
+
+const url = 'http://localhost:8080/apiCliente';
+
+async function getCodigoAPI(idCliente) {
+    const resposta = await fetch(`${url}/buscar/cpf/${idCliente}`, { method: 'GET' })
+        .then((response) =>
+            response.json()
+        ).then((dados) => {
+            return dados;
+        })
+        .catch(error => {
+            console.log('Fetch Error:', error);
+        });
+    return resposta;
+}
