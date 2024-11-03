@@ -191,6 +191,10 @@ header nav a {
     padding: 5px 15px 5px 15px;
 }
 
+.hidden{
+    display: none;
+}
+
 .btnMenu-hidden {
     display: none;
 }
@@ -721,15 +725,16 @@ hr {
         display: none;
     }
 
-    .nav-mobile {
+    .nav-mobile{
         display: block;
     }
-
+    
     .nav-lista {
         display: none;
     }
 
     .nav-lista-mobile {
+        display: block;
         background-color: var(--branco);
         position: fixed;
         left: 0;
