@@ -189,6 +189,7 @@ header nav a {
     display: flex;
     align-items: center;
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
 }
 
 .hidden{
