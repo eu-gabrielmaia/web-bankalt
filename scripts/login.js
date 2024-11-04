@@ -61,6 +61,7 @@ btnLogin.addEventListener('click', async () => {
                 mensagemSenhaInvalida.classList.add('input-hidden');
                 let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
                 if (resultado == true) {
+                    localStorage.setItem('usuario', resposta.nome);
                     location.replace("mobile.html", "_blank");
                 }
                 else {
