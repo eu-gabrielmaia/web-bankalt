@@ -735,12 +735,13 @@ hr {
     }
 
     .nav-lista-mobile {
-        display: block;
+        display: none;
         background-color: var(--branco);
         position: fixed;
         left: 0;
         width: 95%;
         margin: 25px 10px 0px;
+        overflow: hidden;
     }
 
     .drop-down-mobile {
