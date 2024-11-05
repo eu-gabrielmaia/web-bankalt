@@ -37,6 +37,15 @@ html{
 }
 
 
+body::-webkit-scrollbar{
+	width: 15px;
+	background-color: var(--branco);
+}
+
+body::-webkit-scrollbar-thumb{
+	background: linear-gradient(to top,var(--azul), var(--roxo));
+}
+
 body {
     background-color: var(--branco);
     font-family: 'Poppins';
