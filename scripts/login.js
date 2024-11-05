@@ -74,7 +74,11 @@ btnLogin.addEventListener('click', async () => {
             }
         }
         catch(err){
-            console.log(err);
+            //console.log(err);
+            alert("Tente mais tarde! O servidor talvez não está funcionando");
+        }
+        finally{
+            console.log("Processo finalizado")
         }
     }
     if (!validaCPF(cpf)) {
