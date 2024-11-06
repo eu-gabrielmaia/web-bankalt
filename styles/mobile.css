@@ -53,6 +53,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    & p {
+        text-align: center;
+    }
 }
 
 .box-code img {

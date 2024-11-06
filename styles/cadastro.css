@@ -1,0 +1,140 @@
+@import url(style.css);
+
+.secao-cadastro{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--azul-escuro);
+    min-height: 90vh;
+    padding: 25px;
+
+    & .cadastro{
+        display: flex;
+        padding: 40px;
+        width: 500px;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--branco);
+        border-radius: 10px;
+        -webkit-box-shadow: -2px 2px 25px -12px var(--branco);
+        -moz-box-shadow: -2px 2px 25px -12px var(--branco);
+        box-shadow: -2px 2px 25px -12px var(--branco);
+
+        & .cadastro-header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+
+            & img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        & .cadastro-titulo{
+            font-size: 1.75em;
+            font-weight: 700;
+        }
+    }
+
+    form{
+        color: var(--roxo);
+        width: 100%;
+    
+        & input{
+            font-family: 'Poppins';
+        }
+
+        & .box-inputs{
+            margin: 5px 0px 15px 0px;
+        }
+
+        & .input{
+            padding: 10px 0px 10px 10px;
+            width: 100%;
+            border: 0px;
+            border-bottom: 1px solid var(--roxo);
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        & .input-invalido{
+            color: var(--vermelho);
+            font-weight: 500;
+        }
+
+        & .input-hidden{
+            display: none;
+        }
+    
+        & .label{
+            font-weight: 600;
+        }
+
+        & .enviar{
+            padding: 10px;
+            background-color: var(--roxo);
+            color: var(--branco);
+            font-weight: 800;
+            border: 0px;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        & .enviar:hover{
+            background-color: var(--verde-agua);
+        }
+    }
+
+    & .texto{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        color: var(--roxo);
+        
+
+        & a{
+            color: var(--roxo);
+            font-weight: 500;
+        }
+
+        & a:hover{
+            text-decoration: underline 2.5px var(--azul); 
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .secao-cadastro{
+        flex-direction: column;
+        padding: 50px;
+        height: auto;
+
+        .cadastro{
+            width: 100%;
+
+            & .input{
+                width: 100%;
+            }
+        }
+
+        .texto{
+            gap: 15px;
+        }
+    }
+}
+
+@media screen and (prefers-color-scheme: dark){
+    .secao-cadastro{
+        & .cadastro{
+            border: 1px solid var(--azul);
+            background: var(--cinza-escuro);
+        }
+
+        & h1, label, p, #btn-cadastro, .texto, a{
+            color: var(--light);
+        }
+    }
+}

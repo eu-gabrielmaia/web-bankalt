@@ -62,6 +62,7 @@ btnLogin.addEventListener('click', async () => {
                 let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
                 if (resultado == true) {
                     localStorage.setItem('usuario', resposta.nome);
+                    localStorage.setItem('username', resposta.login);
                     location.replace("mobile.html", "_blank");
                 }
                 else {
