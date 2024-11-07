@@ -9,6 +9,8 @@ const mensagemCpfInvalido = document.querySelector('.cpf-invalido');
 const mensagemUsernameInvalido = document.querySelector('.username-invalido');
 const mensagemSenhaInvalida = document.querySelector('.senha-invalida');
 
+const urlBase = 'http://localhost:8080/apiCliente'
+
 function validaCPF(cpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
 
@@ -37,15 +39,7 @@ function validaCPF(cpf) {
 
 }
 
-const urlBase = 'http://localhost:8080/apiCliente'
-
 async function cadastrarCliente(nome, cpf, username, senha) {
-    body = {
-        login: username,
-        cpf: cpf,
-        senha: senha,
-        nome: nome
-    }
 
     fetch(`${urlBase}/cadastrar`, {
         method: 'POST',

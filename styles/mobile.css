@@ -26,6 +26,11 @@ body {
     max-width: 800px;
 }
 
+.box-code-comandos{
+    display: flex;
+    gap: 25px;
+}
+
 .code-comandos {
     margin: 15px 0;
 }
@@ -35,6 +40,15 @@ body {
     border-radius: 5px;
     background: var(--verde);
     color: var(--light);
+    border: 0;
+    font-weight: 600;
+}
+
+.code-comandos button{
+    font-size: 10px;
+    width: 71px;
+    height: 25px;
+    padding: 0;
 }
 
 .btn-code:hover {
@@ -43,9 +57,27 @@ body {
     box-shadow: 0px 0px 15px var(--vermelho);
 }
 
+#atualizar{
+    background: var(--amarelo);
+    color: var(--dark);
+}
+
+#atualizar:hover{
+    box-shadow: 0px 0px 15px var(--amarelo);
+}
+
+#deletar{
+    background: var(--vermelho);
+}
+
+#deletar:hover{
+    box-shadow: 0px 0px 15px var(--vermelho);
+}
+
 .btn-code-descricao {
     font-size: 0.75em;
     margin-top: 15px;
+    text-align: center;
 }
 
 .box-code {

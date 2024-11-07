@@ -63,6 +63,7 @@ btnLogin.addEventListener('click', async () => {
                 if (resultado == true) {
                     localStorage.setItem('usuario', resposta.nome);
                     localStorage.setItem('username', resposta.login);
+                    localStorage.setItem('cpf', resposta.cpf);
                     location.replace("mobile.html", "_blank");
                 }
                 else {
