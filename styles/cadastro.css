@@ -85,6 +85,7 @@
         & .enviar:hover{
             background-color: var(--verde-agua);
         }
+
     }
 
     & .texto{
@@ -133,7 +134,7 @@
             background: var(--cinza-escuro);
         }
 
-        & h1, label, p, #btn-cadastro, .texto, a{
+        & h1, label, p, #btn-cadastro, #btn-atualizar, .texto, a{
             color: var(--light);
         }
     }

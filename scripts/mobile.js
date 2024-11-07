@@ -1,6 +1,8 @@
 const nomeUsuario = document.querySelector('.code-descricao-usuario');
 const username = document.querySelector('.box-code-usuario');
 const btnDeletar = document.querySelector('#deletar')
+const btnAtualizar = document.querySelector('#atualizar')
+
 
 const urlBase = 'http://localhost:8080/apiCliente'
 
@@ -32,24 +34,13 @@ async function excluiClienteAPI(cpfCliente) {
           .catch(error => console.error('Fetch Error:',error));
 }
 
-async function atualizaClenteAPI(cpf,nome,senha,username) {
-    fetch(`${urlBase}/atualizar`, {
-        method: 'PUT',
-        body: JSON.stringify({
-            idCliente: buscaClienteAPI(cpf),
-            login: username,
-            cpf: cpf,
-            senha: senha,
-            nome: nome
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-}
-
 btnDeletar.addEventListener('click', ()=> {
-    excluiClienteAPI(cpfAtual)
-    alert('Usuario deletado com sucesso!')
+    excluiClienteAPI(cpfAtual);
+    localStorage.clear();
+    alert('Usuario deletado com sucesso!');
     location.replace("login.html", "_blank");
+})
+
+btnAtualizar.addEventListener('click', ()=>{
+    location.replace("atualizacao.html", "_blank");
 })
