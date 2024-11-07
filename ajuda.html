@@ -91,7 +91,7 @@
                 <p class="mensagem-texto">Envie agora uma mensagem para nosso email!</p>
             </div>
 
-            <form action="" id="formAjuda">
+            <form action="https://formsubmit.co/projetobankalt@gmail.com" method="POST" id="formAjuda">
                 <div class="box-inputs">
                     <label for="nome">Nome completo:</label> <br>
                     <input type="text" name="nome" placeholder="Digite seu nome" minlength="10" required>
@@ -105,7 +105,8 @@
                     <label for="mensagem">Digite sua pergunta:</label>
                     <textarea name="mensagem" id="mensagemAjuda" required></textarea>
                 </div>
-                <input type="submit" id="enviarMensagem" value="Enviar">
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit" id="enviarMensagem">Enviar</button>
             </form>
         </section>
     </main>
