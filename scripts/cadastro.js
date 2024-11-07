@@ -37,6 +37,43 @@ function validaCPF(cpf) {
 
 }
 
+const urlBase = 'http://localhost:8080/apiCliente'
+
+async function cadastrarCliente(nome, cpf, username, senha) {
+    body = {
+        login: username,
+        cpf: cpf,
+        senha: senha,
+        nome: nome
+    }
+
+    fetch(`${urlBase}/cadastrar`, {
+        method: 'POST',
+        body: JSON.stringify({
+            login: username,
+            cpf: cpf,
+            senha: senha,
+            nome: nome
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+}
+
+async function buscaClienteAPI(cpfCliente) {
+    const resposta = await fetch(`${urlBase}/buscar/cpf/${cpfCliente}`, { method: 'GET' })
+        .then((response) =>
+            response.json()
+        ).then((dados) => {
+            return dados;
+        })
+        .catch(error => {
+            console.log('Fetch Error:', error);
+        });
+    return resposta ? true : false
+}
+
 inputCpf.addEventListener('input', function (e) {
     this.value = this.value.replace(/[^0-9.-]/g, '');
 })
@@ -60,12 +97,19 @@ btnCadastro.addEventListener('click', async () => {
     const username = inputUsername.value;
     const senha = inputSenha.value;
 
-    function validaInput(input, mensagemInvalida){
+    function validaInput(input, mensagemInvalida) {
         input ? mensagemInvalida.classList.add('input-hidden') : mensagemInvalida.classList.remove('input-hidden');
     }
 
-    validaInput(nome, mensagemNomeInvalido);
-    validaInput(username, mensagemUsernameInvalido);
-    validaInput(validaCPF(cpf), mensagemCpfInvalido);
-    validaInput(senha, mensagemSenhaInvalida);
+    validaInput(nome, mensagemNomeInvalido)
+    validaInput(username, mensagemUsernameInvalido)
+    validaInput(validaCPF(cpf), mensagemCpfInvalido)
+    validaInput(senha, mensagemSenhaInvalida)
+
+    if (await buscaClienteAPI(cpf) === false) {
+        cadastrarCliente(nome,cpf,username,senha)
+        alert('Usuario cadastrado')
+    } else {
+        alert('Esse CPF já está cadastrado no sistema!')
+    }
 })
