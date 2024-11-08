@@ -206,7 +206,7 @@ header nav a {
 }
 
 .btnMenu-hidden {
-    display: none;
+    display: block;
 }
 
 .nav-menu img {
@@ -753,6 +753,7 @@ hr {
     }
 
     .drop-down-mobile {
+        display: none;
         background-color: var(--roxo);
         width: 80%;
         position: static;

@@ -6,10 +6,12 @@ const checkboxBurger = document.querySelector("#burger");
 
 btnMobileLista.addEventListener('click', ()=> {
     if(navMobileLista.classList.contains('btnMenu-hidden')){
-        iconMobileLista.style.transform = "rotate(0deg)";
+        iconMobileLista.style.transform = "rotate(180deg)";
+        navMobileLista.style.display = "none"
     }
     else{
-        iconMobileLista.style.transform = "rotate(180deg)";
+        iconMobileLista.style.transform = "rotate(0deg)";
+        navMobileLista.style.display = "block"
     }
     navMobileLista.classList.toggle('btnMenu-hidden');
 })
