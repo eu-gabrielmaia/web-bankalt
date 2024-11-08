@@ -28,7 +28,6 @@ async function buscaClienteAPI(cpfCliente) {
 
 async function atualizaClienteAPI() {
     localStorage.setItem('usuario', inputNome.value)
-    localStorage.setItem('cpf', inputCpf.value)
     localStorage.setItem('username', inputUsername.value)
 
     await fetch(`${urlBase}/atualizar`, {
@@ -50,5 +49,5 @@ async function atualizaClienteAPI() {
 btnAtualizar.addEventListener('click', ()=>{
     atualizaClienteAPI()
     alert('Alteração concluída!')
-    location.replace("mobile.html", "_blank");
+    //location.replace("mobile.html", "_blank");
 })
