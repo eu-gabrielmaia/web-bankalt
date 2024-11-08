@@ -39,9 +39,12 @@ body {
     padding: 5px 20px;
     border-radius: 5px;
     background: var(--verde);
-    color: var(--light);
     border: 0;
     font-weight: 600;
+
+    &a {
+        color: var(--light) !important;
+    }
 }
 
 .code-comandos button{
@@ -101,7 +104,13 @@ body {
 }
 
 .box-code img:hover{
+    transition: ease-in 1s;
     border: 1px solid var(--verde);
+    box-shadow: 0px 0px 15px var(--verde);
+}
+
+.box-code img:not(:hover){
+    transition: all 1s;
 }
 
 @media (max-width: 768px) {
@@ -119,6 +128,10 @@ body {
 
     .btn-code {
         background: var(--roxo);
+        color: var(--light);
+    }
+
+    .btn-code a{
         color: var(--light);
     }
 
