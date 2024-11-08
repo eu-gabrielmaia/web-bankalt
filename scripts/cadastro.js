@@ -92,18 +92,30 @@ btnCadastro.addEventListener('click', async () => {
     const senha = inputSenha.value;
 
     function validaInput(input, mensagemInvalida) {
-        input ? mensagemInvalida.classList.add('input-hidden') : mensagemInvalida.classList.remove('input-hidden');
+        if(!input){
+            mensagemInvalida.classList.remove('input-hidden');
+            
+            return false;
+        }
+        mensagemInvalida.classList.add('input-hidden');
+        return true;
     }
 
-    validaInput(nome, mensagemNomeInvalido)
-    validaInput(username, mensagemUsernameInvalido)
-    validaInput(validaCPF(cpf), mensagemCpfInvalido)
-    validaInput(senha, mensagemSenhaInvalida)
-
-    if (await buscaClienteAPI(cpf) === false) {
+    if(validaInput(nome, mensagemNomeInvalido) && validaInput(username, mensagemUsernameInvalido) && validaInput(validaCPF(cpf), mensagemCpfInvalido) && validaInput(senha, mensagemSenhaInvalida) && await buscaClienteAPI(cpf) === false){
         cadastrarCliente(nome,cpf,username,senha)
         alert('Usuario cadastrado')
-    } else {
-        alert('Esse CPF já está cadastrado no sistema!')
+    }
+    else {
+        validaInput(nome, mensagemNomeInvalido)
+        validaInput(username, mensagemUsernameInvalido)
+        validaInput(validaCPF(cpf), mensagemCpfInvalido)
+        validaInput(senha, mensagemSenhaInvalida)
+        //!cpf ? alert ('CPF inválido')
+        if(!cpf){
+            alert('CPF inválido')
+        }
+        else{
+            alert('Esse CPF já está cadastrado no sistema!')
+        }
     }
 })
