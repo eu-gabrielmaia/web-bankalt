@@ -49,5 +49,5 @@ async function atualizaClienteAPI() {
 btnAtualizar.addEventListener('click', ()=>{
     atualizaClienteAPI()
     alert('Alteração concluída!')
-    //location.replace("mobile.html", "_blank");
+    location.replace("mobile.html", "_blank");
 })
