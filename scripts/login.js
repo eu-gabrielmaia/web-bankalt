@@ -55,39 +55,43 @@ btnLogin.addEventListener('click', async () => {
     const cpf = inputCpf.value;
     const senha = inputSenha.value;
     const resposta = await getCodigoAPI(cpf);
-    if (validaCPF(cpf) && senha) {
-        try{
-            if (resposta.cpf === cpf && resposta.senha === senha) {
-                mensagemSenhaInvalida.classList.add('input-hidden');
-                let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
-                if (resultado == true) {
-                    localStorage.setItem('usuario', resposta.nome);
-                    localStorage.setItem('username', resposta.login);
-                    localStorage.setItem('cpf', resposta.cpf);
-                    location.replace("mobile.html", "_blank");
+    if(resposta !== null){
+        if (validaCPF(cpf) && senha) {
+            try{
+                if (resposta.cpf === cpf && resposta.senha === senha) {
+                    mensagemSenhaInvalida.classList.add('input-hidden');
+                    let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
+                    if (resultado == true) {
+                        localStorage.setItem('usuario', resposta.nome);
+                        localStorage.setItem('username', resposta.login);
+                        localStorage.setItem('cpf', resposta.cpf);
+                        location.replace("mobile.html", "_blank");
+                    }
+                    else {
+                        alert("OK, processo cancelado!");
+                    }
                 }
-                else {
-                    alert("OK, processo cancelado!");
+                if (resposta.senha != senha) {
+                    mensagemSenhaInvalida.classList.remove('input-hidden');
+                    mensagemSenhaInvalida.textContent = "Tente outra senha";
                 }
             }
-            if (resposta.senha != senha) {
-                mensagemSenhaInvalida.classList.remove('input-hidden');
-                mensagemSenhaInvalida.textContent = "Tente outra senha";
+            catch(err){
+                console.log(err);
+            }
+            finally{
+                console.log("Processo finalizado")
             }
         }
-        catch(err){
-            //console.log(err);
-            alert("Tente mais tarde! O servidor talvez não está funcionando");
+        if (!validaCPF(cpf)) {
+            mensagemCpfInvalido.classList.remove('input-hidden');
         }
-        finally{
-            console.log("Processo finalizado")
+        if (!senha) {
+            mensagemSenhaInvalida.classList.remove('input-hidden');
         }
     }
-    if (!validaCPF(cpf)) {
-        mensagemCpfInvalido.classList.remove('input-hidden');
-    }
-    if (!senha) {
-        mensagemSenhaInvalida.classList.remove('input-hidden');
+    else{
+        alert("Usuario não encontrado!")
     }
 })
 
@@ -102,6 +106,8 @@ async function getCodigoAPI(idCliente) {
         })
         .catch(error => {
             console.log('Fetch Error:', error);
+            alert("Tente mais tarde! O servidor talvez não está funcionando");
+            return undefined;
         });
     return resposta;
 }

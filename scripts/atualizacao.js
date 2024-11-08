@@ -27,6 +27,10 @@ async function buscaClienteAPI(cpfCliente) {
 }
 
 async function atualizaClienteAPI() {
+    localStorage.setItem('usuario', inputNome.value)
+    localStorage.setItem('cpf', inputCpf.value)
+    localStorage.setItem('username', inputUsername.value)
+
     await fetch(`${urlBase}/atualizar`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -40,9 +44,11 @@ async function atualizaClienteAPI() {
             'Content-type': 'application/json; charset=UTF-8',
         },
     })
+    
 }
 
 btnAtualizar.addEventListener('click', ()=>{
     atualizaClienteAPI()
     alert('Alteração concluída!')
+    location.replace("mobile.html", "_blank");
 })
