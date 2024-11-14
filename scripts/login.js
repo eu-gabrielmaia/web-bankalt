@@ -65,6 +65,9 @@ btnLogin.addEventListener('click', async () => {
                         localStorage.setItem('usuario', resposta.nome);
                         localStorage.setItem('username', resposta.login);
                         localStorage.setItem('cpf', resposta.cpf);
+                        localStorage.setItem('corPrincipal', resposta.corPrincipal);
+                        localStorage.setItem('corSegundaria', resposta.corSegundaria);
+                        localStorage.setItem('corTerciaria', resposta.corTerciaria);
                         location.replace("mobile.html", "_blank");
                     }
                     else {
