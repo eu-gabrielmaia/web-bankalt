@@ -92,7 +92,7 @@ async function atualizaClienteAPI() {
     localStorage.setItem('username', inputUsername.value)
     localStorage.setItem('corPrincipal', inputCorPrincipal.value)
     localStorage.setItem('corSegundaria', inputCorSegundaria.value)
-    localStorage.setItem('corTerciarial', inputCorTerciaria.value)
+    localStorage.setItem('corTerciaria', inputCorTerciaria.value)
 
     await fetch(`${urlBase}/atualizar`, {
         method: 'PUT',

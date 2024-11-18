@@ -43,8 +43,13 @@ body {
     font-weight: 600;
 
     &a {
-        color: var(--light) !important;
+        
     }
+}
+
+
+#btn-voltar a{
+    color: var(--branco) !important;
 }
 
 .code-comandos button{
@@ -64,7 +69,7 @@ body {
 
 #atualizar{
     background: var(--amarelo);
-    color: var(--dark);
+    color: var(--preto);
 }
 
 #atualizar:hover{
@@ -73,6 +78,7 @@ body {
 
 #deletar{
     background: var(--vermelho);
+    color: var(--dark);
 }
 
 #deletar:hover{
@@ -94,6 +100,20 @@ body {
     & p {
         text-align: center;
     }
+}
+
+.btn-code {
+    background: var(--verde);
+    color: var(--light);
+}
+
+.btn-code a{
+    color: var(--light);
+}
+
+.btn-code:hover {
+    background: var(--verde);
+    box-shadow: 0px 0px 15px var(--verde);
 }
 
 .box-code img {
@@ -138,5 +158,9 @@ body {
     .btn-code:hover {
         background: var(--azul);
         box-shadow: 0px 0px 15px var(--azul);
+    }
+
+    #btn-voltar a, #deletar{
+        color: var(--light) !important;
     }
 }
