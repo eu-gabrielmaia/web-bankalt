@@ -28,7 +28,8 @@ body {
 
 .box-code-comandos{
     display: flex;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .code-comandos {
@@ -41,10 +42,6 @@ body {
     background: var(--verde);
     border: 0;
     font-weight: 600;
-
-    &a {
-        
-    }
 }
 
 
@@ -83,6 +80,14 @@ body {
 
 #deletar:hover{
     box-shadow: 0px 0px 15px var(--vermelho);
+}
+
+#sair{
+    background: var(--azul);
+}
+
+#sair:hover{
+    box-shadow: 0px 0px 15px var(--verde-agua);
 }
 
 .btn-code-descricao {

@@ -5,6 +5,12 @@ const mensagemInvalido = document.querySelector('.input-invalido');
 const mensagemCpfInvalido = document.querySelector('.cpf-invalido');
 const mensagemSenhaInvalida = document.querySelector('.senha-invalida');
 
+document.addEventListener("DOMContentLoaded", () => {
+    if(localStorage.getItem('cpf')){
+        location.replace("mobile.html", "_blank");
+    }
+})
+
 function validaCPF(cpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
 

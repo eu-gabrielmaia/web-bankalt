@@ -2,6 +2,7 @@ const nomeUsuario = document.querySelector('.code-descricao-usuario');
 const username = document.querySelector('.box-code-usuario');
 const btnDeletar = document.querySelector('#deletar')
 const btnAtualizar = document.querySelector('#atualizar')
+const btnSair = document.querySelector('#sair')
 
 
 const urlBase = 'http://localhost:8080/apiCliente'
@@ -43,4 +44,9 @@ btnDeletar.addEventListener('click', ()=> {
 
 btnAtualizar.addEventListener('click', ()=>{
     location.replace("atualizacao.html", "_blank");
+})
+
+btnSair.addEventListener('click', ()=>{
+    localStorage.clear();
+    location.replace("login.html", "_blank");
 })
