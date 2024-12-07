@@ -32,18 +32,18 @@
     --vermelho: rgba(250, 2, 2, 1);
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 
-body::-webkit-scrollbar{
-	width: 15px;
-	background-color: var(--branco);
+body::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--branco);
 }
 
-body::-webkit-scrollbar-thumb{
-	background: linear-gradient(to top,var(--azul), var(--roxo));
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, var(--azul), var(--roxo));
 }
 
 body {
@@ -201,7 +201,7 @@ header nav a {
     cursor: pointer;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -651,7 +651,7 @@ header nav a {
     }
 }
 
-.seletor-cor{
+.seletor-cor {
     height: 25px;
     width: 25px;
     border: 0;
@@ -742,10 +742,10 @@ hr {
         display: none;
     }
 
-    .nav-mobile{
+    .nav-mobile {
         display: block;
     }
-    
+
     .nav-lista {
         display: none;
     }

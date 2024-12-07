@@ -1,9 +1,9 @@
 @import url(style.css);
 
-.secao-servicos-img{
+.secao-servicos-img {
     background: url("../assets/Serviços.png") lightgray 50% / cover no-repeat;
-    
-    & img{
+
+    & img {
         width: 100%;
     }
 }
@@ -12,11 +12,11 @@
     padding: 50px;
 }
 
-.secao-servicos-tea{
+.secao-servicos-tea {
     background-color: var(--azul-claro);
 }
 
-.servicos-box-descricao{
+.servicos-box-descricao {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,19 +27,19 @@
     margin: 60px 0;
 }
 
-.servicos-titulo{
+.servicos-titulo {
     font-size: 3em;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.servicos-subtitulo{
+.servicos-subtitulo {
     font-size: 1.5em;
     font-weight: 600;
     line-height: 150%;
 }
 
-.servicos-grade{
+.servicos-grade {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,37 +50,37 @@
     justify-content: center;*/
 }
 
-.servicos-grade div:nth-child(even){
+.servicos-grade div:nth-child(even) {
     background-color: var(--roxo);
     color: var(--branco);
 }
 
-.servicos-grade div:nth-child(even):hover{
+.servicos-grade div:nth-child(even):hover {
     transition: 1s ease-in-out;
     background-color: var(--azul);
     color: var(--branco);
     border: 3px solid var(--azul-escuro);
 }
 
-.servicos-grade-item{
+.servicos-grade-item {
     display: flex;
     flex-direction: column;
-    justify-self:stretch;
+    justify-self: stretch;
     gap: 15px;
     width: 500px;
     padding: 30px;
     background-color: var(--branco);
     border: 3px solid var(--roxo);
     border-radius: 20px;
-    
 
-    & h2{
+
+    & h2 {
         font-size: 2em;
         font-weight: 700;
         word-break: break-all;
     }
 
-    & p{
+    & p {
         font-size: 1.25em;
         font-weight: 500;
         text-align: justify;
@@ -88,7 +88,7 @@
     }
 }
 
-.grade-conjunto{
+.grade-conjunto {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -96,7 +96,7 @@
     margin: 10px 30px;
 }
 
-.servicos-grade-item:hover{
+.servicos-grade-item:hover {
     transition: 1s ease-in-out;
     background-color: var(--azul);
     color: var(--branco);
@@ -108,12 +108,13 @@
         padding: 20px;
     }
 
-    .servicos-grade-item{
+    .servicos-grade-item {
         width: 100%;
-        & p{
+
+        & p {
             text-align: left;
         }
     }
 
-    
+
 }

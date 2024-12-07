@@ -1,14 +1,14 @@
 @import url(style.css);
 
-.secao-pontos-img{
+.secao-pontos-img {
     background: url("../assets/Pontos.png") lightgray 50% / cover no-repeat;
-    
-    & img{
+
+    & img {
         width: 100%;
     }
 }
 
-.secao-pontos-descricao{
+.secao-pontos-descricao {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,17 +19,17 @@
     margin: 50px;
 }
 
-.pontos-titulo{
+.pontos-titulo {
     font-size: 3em;
     font-weight: 700;
 }
 
-.pontos-texto{
+.pontos-texto {
     font-size: 1.5em;
     font-weight: 600;
 }
 
-.pontos-box{
+.pontos-box {
     text-align: left;
     margin: 10px;
     padding: 25px 50px;
@@ -44,40 +44,41 @@
     gap: 15px;
 }
 
-.pontos-lista li::before{
+.pontos-lista li::before {
     content: '- ';
 }
 
-.pontos-box-titulo{
+.pontos-box-titulo {
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
-.pontos-box-texto, .pontos-lista li{
+.pontos-box-texto, .pontos-lista li {
     color: var(--branco);
     font-size: 1.25em;
     margin-bottom: 15px;
 }
 
-.pontos-box-destaque{
+.pontos-box-destaque {
     font-weight: bold;
 }
 
 @media (max-width: 850px) {
 
-    .secao-pontos-descricao{
+    .secao-pontos-descricao {
         margin: 15px;
     }
 
-    .pontos-box{
+    .pontos-box {
         padding: 20px;
     }
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    .pontos-box{
-        & p, li{
+    .pontos-box {
+
+        & p, li {
             color: var(--light);
         }
     }

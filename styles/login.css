@@ -1,18 +1,18 @@
 @import url(style.css);
 
-.secao-login{
+.secao-login {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--azul-escuro);
     height: 90vh;
 
-    & img{
+    & img {
         width: 40%;
         height: auto;
     }
 
-    & .login{
+    & .login {
         display: flex;
         padding: 40px;
         width: 500px;
@@ -24,26 +24,26 @@
         -moz-box-shadow: -2px 2px 25px -12px var(--branco);
         box-shadow: -2px 2px 25px -12px var(--branco);
 
-        & .login-titulo{
+        & .login-titulo {
             font-size: 1.5em;
             font-weight: 700;
             margin-bottom: 15px;
         }
     }
 
-    form{
+    form {
         color: var(--roxo);
         width: 100%;
-    
-        & input{
+
+        & input {
             font-family: 'Poppins';
         }
 
-        & .box-inputs{
+        & .box-inputs {
             margin: 5px 0px 15px 0px;
         }
 
-        & .input{
+        & .input {
             padding: 10px 0px 10px 10px;
             width: 100%;
             border: 0px;
@@ -52,20 +52,20 @@
             font-size: 1.2em;
         }
 
-        & .input-invalido{
+        & .input-invalido {
             color: var(--vermelho);
             font-weight: 500;
         }
 
-        & .input-hidden{
+        & .input-hidden {
             display: none;
         }
-    
-        & .label{
+
+        & .label {
             font-weight: 600;
         }
 
-        & .enviar{
+        & .enviar {
             padding: 10px;
             background-color: var(--roxo);
             color: var(--branco);
@@ -75,64 +75,65 @@
             width: 100%;
         }
 
-        & .enviar:hover{
+        & .enviar:hover {
             background-color: var(--verde-agua);
         }
     }
 
-    & .texto{
+    & .texto {
         margin-top: 10px;
         display: flex;
         justify-content: center;
         gap: 50px;
         color: var(--roxo);
-        
 
-        & a{
+
+        & a {
             color: var(--roxo);
             font-weight: 500;
         }
 
-        & a:hover{
-            text-decoration: underline 2.5px var(--azul); 
+        & a:hover {
+            text-decoration: underline 2.5px var(--azul);
         }
     }
 
-    
+
 }
 
 @media (max-width: 1000px) {
-    .secao-login{
+    .secao-login {
         flex-direction: column;
         padding: 50px;
         height: auto;
 
-        & img{
+        & img {
             width: 100%;
         }
 
-        .login{
+        .login {
             width: 100%;
 
-            & .input{
+            & .input {
                 width: 100%;
             }
         }
 
-        .texto{
+        .texto {
             gap: 15px;
         }
     }
 }
 
-@media screen and (prefers-color-scheme: dark){
-    .secao-login{
-        & .login{
+@media screen and (prefers-color-scheme: dark) {
+    .secao-login {
+        
+        & .login {
             border: 1px solid var(--azul);
             background: var(--cinza-escuro);
         }
 
-        & h1, label, p, #btn-login, .texto, a{
+        & h1, label, p, #btn-login, .texto, a {
             color: var(--light);
         }
     }

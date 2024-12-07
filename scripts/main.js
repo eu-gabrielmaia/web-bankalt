@@ -6,24 +6,24 @@ const checkboxBurger = document.querySelector("#burger");
 
 const root = document.documentElement;
 
-const corPrincipalAtual1 = localStorage.getItem('corPrincipal')
-const corSegundariaAtual1 = localStorage.getItem('corSegundaria')
-const corTerciariaAtual1 = localStorage.getItem('corTerciaria')
+const corPrincipalAtual1 = localStorage.getItem('corPrincipal');
+const corSegundariaAtual1 = localStorage.getItem('corSegundaria');
+const corTerciariaAtual1 = localStorage.getItem('corTerciaria');
 
-if(corPrincipalAtual1 !== 'null'){
-    root.style.setProperty('--roxo', corPrincipalAtual1)
-    root.style.setProperty('--azul', corSegundariaAtual1)
-    root.style.setProperty('--verde', corTerciariaAtual1)
+if (corPrincipalAtual1 !== 'null') {
+    root.style.setProperty('--roxo', corPrincipalAtual1);
+    root.style.setProperty('--azul', corSegundariaAtual1);
+    root.style.setProperty('--verde', corTerciariaAtual1);
 }
 
-btnMobileLista.addEventListener('click', ()=> {
-    if(navMobileLista.classList.contains('btnMenu-hidden')){
+btnMobileLista.addEventListener('click', () => {
+    if (navMobileLista.classList.contains('btnMenu-hidden')) {
         iconMobileLista.style.transform = "rotate(180deg)";
-        navMobileLista.style.display = "none"
+        navMobileLista.style.display = "none";
     }
-    else{
+    else {
         iconMobileLista.style.transform = "rotate(0deg)";
-        navMobileLista.style.display = "block"
+        navMobileLista.style.display = "block";
     }
     navMobileLista.classList.toggle('btnMenu-hidden');
 })

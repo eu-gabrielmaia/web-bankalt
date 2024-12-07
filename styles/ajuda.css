@@ -9,7 +9,7 @@
   align-items: center;
 
   & h1 {
-    padding: 0px 15px; 
+    padding: 0px 15px;
     font-size: 6.25em;
     text-align: center;
     margin: 20px;
@@ -51,14 +51,14 @@
   }
 }
 
-#formAjuda{
-  
+#formAjuda {
 
-  & label{
+
+  & label {
     font-weight: 600;
   }
 
-  & input, textarea{
+  & input, textarea {
     font-size: 1em;
     font-family: 'Poppins';
     margin-top: 5px;
@@ -70,11 +70,11 @@
   }
 }
 
-.box-inputs{
+.box-inputs {
   margin-bottom: 15px;
 }
 
-button[type="submit"]{
+button[type="submit"] {
   font-family: 'Poppins';
   font-weight: 700;
   text-transform: uppercase;
@@ -87,7 +87,7 @@ button[type="submit"]{
   width: 100%;
 }
 
-button[type="submit"]:hover{
+button[type="submit"]:hover {
   background: var(--azul);
   border: 0;
 }
@@ -112,10 +112,10 @@ button[type="submit"]:hover{
       margin-bottom: 20px;
       font-weight: 700;
     }
-    
+
     & .mensagem-texto {
-        font-size: 1.25em;
-        font-weight: 500;
+      font-size: 1.25em;
+      font-weight: 500;
     }
   }
 
@@ -143,7 +143,7 @@ button[type="submit"]:hover{
     width: 100%;
     text-transform: uppercase;
 
-    & h1{
+    & h1 {
       font-size: 4em;
     }
 
@@ -152,7 +152,7 @@ button[type="submit"]:hover{
     }
   }
 
-  .secao-mensagem{
+  .secao-mensagem {
     flex-direction: column;
 
     & .box-mensagem {
@@ -163,39 +163,43 @@ button[type="submit"]:hover{
     }
   }
 
-  #formAjuda{
-    & input, textarea{
+  #formAjuda {
+
+    & input, textarea {
       min-width: 400px;
     }
   }
 }
 
 @media (max-width: 480px) {
-  
-  #formAjuda{
-    & input, textarea{
+
+  #formAjuda {
+
+    & input, textarea {
       min-width: 200px;
     }
   }
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    .secao-ajuda {
-      & .ajuda-titulo{
-        color: var(--light);
-      }
+  .secao-ajuda {
+    & .ajuda-titulo {
+      color: var(--light);
     }
+  }
 
-    .secao-pergunta {
-      & .pergunta-titulo, h2{
-      
-        color: var(--light);
-      }
-    }
+  .secao-pergunta {
 
-    .secao-mensagem{
-      & label, #enviarMensagem{
-        color: var(--light);
-      }
+    & .pergunta-titulo, h2 {
+
+      color: var(--light);
     }
+  }
+
+  .secao-mensagem {
+
+    & label, #enviarMensagem {
+      color: var(--light);
+    }
+  }
 }

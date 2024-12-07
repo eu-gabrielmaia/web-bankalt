@@ -1,64 +1,64 @@
 @import url(style.css);
 
-li{
+li {
     color: var(--roxo);
     text-decoration: none;
 }
 
-.secao-negocios-img{
+.secao-negocios-img {
     background: url("../assets/Empresas.png") lightgray 50% / cover no-repeat;
-    
-    & img{
+
+    & img {
         width: 100%;
     }
 }
 
-.secao-negocios-descricao{
+.secao-negocios-descricao {
     padding: 60px;
     color: var(--roxo);
 
-    & .negocios-titulo{
+    & .negocios-titulo {
         font-size: 3em;
         font-weight: 700;
         margin-bottom: 15px;
         text-transform: uppercase;
     }
 
-    & .negocios-texto{
+    & .negocios-texto {
         font-size: 1.25em;
         font-weight: 500;
         margin-bottom: 15px;
         text-align: left;
         line-height: 150%;
     }
-    
+
 }
 
-.conta-item-img{
+.conta-item-img {
     width: 100%;
 }
 
-.negocios-box{
+.negocios-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    & ul{
+    & ul {
         display: flex;
         flex-direction: column;
         gap: 35px;
         padding: 20px;
 
-        & li{
+        & li {
             display: flex;
             align-items: center;
             gap: 15px;
 
-            & img{
+            & img {
                 width: auto;
             }
-    
-            & p{
+
+            & p {
                 font-size: 1.5em;
                 font-weight: 600;
             }
@@ -66,22 +66,22 @@ li{
     }
 }
 
-.secao-vantagens{
+.secao-vantagens {
     padding: 50px;
     background-color: var(--roxo-claro);
     color: var(--roxo);
     display: flex;
     flex-direction: column;
     gap: 54px;
-    
-    & .vantagens-titulo{
+
+    & .vantagens-titulo {
         text-align: center;
         font-size: 3em;
         font-weight: 700;
         text-transform: uppercase;
     }
 
-    & .vantagens-box{
+    & .vantagens-box {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -89,7 +89,7 @@ li{
         gap: 20px;
     }
 
-    & .vantagens-box-texto{
+    & .vantagens-box-texto {
         width: 300px;
         height: 120px;
         padding: 20px;
@@ -100,55 +100,56 @@ li{
         justify-content: center;
         align-items: center;
 
-        & .vantagens-texto{
+        & .vantagens-texto {
             font-size: 1.5em;
             font-weight: 700;
         }
     }
 
-    & .vantagens-box-texto:hover{
+    & .vantagens-box-texto:hover {
         transition: 0.5s ease;
         background-color: var(--roxo);
         color: var(--branco);
     }
 }
 
-.conta-pj{
-    & .negocios-titulo, .negocios-texto{
+.conta-pj {
+
+    & .negocios-titulo,
+    .negocios-texto {
         text-align: right;
     }
 
-    & .negocios-box{
+    & .negocios-box {
         flex-direction: row-reverse;
 
-        &  li{
+        & li {
             flex-direction: row-reverse;
         }
 
     }
 }
 
-@media (max-width: 850px) { 
-    .secao-negocios-descricao{
+@media (max-width: 850px) {
+    .secao-negocios-descricao {
         padding: 25px;
 
-        .negocios-texto{
+        .negocios-texto {
             text-align: justify;
         }
-    
-        .negocios-box{
+
+        .negocios-box {
             align-items: start;
             flex-direction: column;
         }
 
-        .conta-pj-box{
+        .conta-pj-box {
             align-items: end;
         }
     }
 
-    & .secao-vantagens{
+    & .secao-vantagens {
         font-size: 12px;
-        
+
     }
 }
-

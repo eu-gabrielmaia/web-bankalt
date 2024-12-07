@@ -26,7 +26,7 @@ body {
     max-width: 800px;
 }
 
-.box-code-comandos{
+.box-code-comandos {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -45,11 +45,11 @@ body {
 }
 
 
-#btn-voltar a{
+#btn-voltar a {
     color: var(--branco) !important;
 }
 
-.code-comandos button{
+.code-comandos button {
     font-size: 1em;
     width: 100%;
 }
@@ -60,33 +60,33 @@ body {
     box-shadow: 0px 0px 15px var(--vermelho);
 }
 
-.btn-code:not(:hover){
+.btn-code:not(:hover) {
     transition: ease-in 0.5s;
 }
 
-#atualizar{
+#atualizar {
     background: var(--amarelo);
     color: var(--preto);
 }
 
-#atualizar:hover{
+#atualizar:hover {
     box-shadow: 0px 0px 15px var(--amarelo);
 }
 
-#deletar{
+#deletar {
     background: var(--vermelho);
     color: var(--dark);
 }
 
-#deletar:hover{
+#deletar:hover {
     box-shadow: 0px 0px 15px var(--vermelho);
 }
 
-#sair{
+#sair {
     background: var(--azul);
 }
 
-#sair:hover{
+#sair:hover {
     box-shadow: 0px 0px 15px var(--verde-agua);
 }
 
@@ -112,7 +112,7 @@ body {
     color: var(--light);
 }
 
-.btn-code a{
+.btn-code a {
     color: var(--light);
 }
 
@@ -128,13 +128,13 @@ body {
     margin-bottom: 10px;
 }
 
-.box-code img:hover{
+.box-code img:hover {
     transition: ease-in 0.5s;
     border: 1px solid var(--verde);
     box-shadow: 0px 0px 15px var(--verde);
 }
 
-.box-code img:not(:hover){
+.box-code img:not(:hover) {
     transition: all 1s;
 }
 
@@ -156,7 +156,7 @@ body {
         color: var(--light);
     }
 
-    .btn-code a{
+    .btn-code a {
         color: var(--light);
     }
 
@@ -165,7 +165,7 @@ body {
         box-shadow: 0px 0px 15px var(--azul);
     }
 
-    #btn-voltar a, #deletar{
+    #btn-voltar a, #deletar {
         color: var(--light) !important;
     }
 }

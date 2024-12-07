@@ -11,6 +11,6 @@ btnPlayDescricao.addEventListener('click', () => {
     synth.speak(utterance2);
 })
 
-btnPauseDescricao.addEventListener('click', ()=> {
+btnPauseDescricao.addEventListener('click', () => {
     synth.cancel();
 })

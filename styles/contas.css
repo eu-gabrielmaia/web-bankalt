@@ -1,17 +1,17 @@
 @import url(style.css);
 
-.secao-contas-img{
+.secao-contas-img {
     /*background: url("../assets/QuebraCabeca.jpg") lightgray 50% / cover no-repeat;*/
     background: var(--degrade-azul-roxo);
     height: 70vh;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     font-weight: 700;
     padding: 100px 50px 100px 50px;
     color: var(--branco);
 
-    .contas-box-destaque{
+    .contas-box-destaque {
         width: 650px;
         display: flex;
         flex-direction: column;
@@ -19,19 +19,19 @@
         align-items: center;
     }
 
-    h1{
+    h1 {
         font-size: 3em;
         margin-bottom: 20px;
         line-height: 110%;
         -webkit-text-stroke-width: 1.5px;
         -webkit-text-stroke-color: var(--roxo);
     }
-    
-    img{
+
+    img {
         width: 100%;
     }
 
-    & .botao{
+    & .botao {
         font-size: 1.25em;
         padding: 15px;
         border-radius: 10px;
@@ -41,52 +41,52 @@
         text-decoration: none;
     }
 
-    & .botao:hover{
+    & .botao:hover {
         color: var(--branco);
         background: var(--verde-agua);
     }
 }
 
-.conta-kids{
+.conta-kids {
     background-color: var(--verde-agua-claro);
     color: var(--verde-agua);
 }
 
-.conta-basica{
+.conta-basica {
     background-color: var(--roxo-claro);
     color: var(--roxo);
 }
 
-.conta-premium{
+.conta-premium {
     background: var(--degrade-roxo);
     color: var(--branco);
 }
 
-.secao-contas{
+.secao-contas {
     padding: 150px;
     display: flex;
     justify-content: center;
 
-    .contas-box{
+    .contas-box {
         display: flex;
         align-items: center;
         gap: 50px;
-        
 
-        .contas-box-titulos{
+
+        .contas-box-titulos {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-    
-            & h2{
+
+            & h2 {
                 font-size: 3em;
                 font-weight: 700;
                 text-transform: uppercase;
             }
         }
 
-        p{
+        p {
             font-size: 1.5em;
             font-weight: 400;
             text-align: justify;
@@ -96,32 +96,33 @@
 }
 
 @media (max-width: 850px) {
-    .secao-contas-img{
+    .secao-contas-img {
         text-align: center;
         padding: 100px 20px;
 
-        & img{
+        & img {
             display: none;
         }
     }
 
-    .secao-contas{
+    .secao-contas {
         padding: 50px;
         flex-direction: column;
     }
-    .contas-box{
+
+    .contas-box {
         flex-direction: column;
     }
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    
-    section{
 
-        & .contas-box-destaque .botao{
+    section {
+
+        & .contas-box-destaque .botao {
             background-color: var(--light);
             color: var(--roxo);
         }
-        
+
     }
 }

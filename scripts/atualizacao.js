@@ -37,36 +37,36 @@ seletorCorPrincipal.value = corPrincipalAtual;
 seletorCorSegundaria.value = corSegundariaAtual;
 seletorCorTerciaria.value = corTerciariaAtual;
 
-seletorCorPrincipal.addEventListener('change', ()=>{
+seletorCorPrincipal.addEventListener('change', () => {
     inputCorPrincipal.style.color = seletorCorPrincipal.value;
     inputCorPrincipal.value = seletorCorPrincipal.value
 })
 
-seletorCorSegundaria.addEventListener('change', ()=>{
+seletorCorSegundaria.addEventListener('change', () => {
     inputCorSegundaria.style.color = seletorCorSegundaria.value;
     inputCorSegundaria.value = seletorCorSegundaria.value
 })
 
-seletorCorTerciaria.addEventListener('change', ()=>{
+seletorCorTerciaria.addEventListener('change', () => {
     inputCorTerciaria.style.color = seletorCorTerciaria.value;
     inputCorTerciaria.value = seletorCorTerciaria.value
 })
 
-inputCorPrincipal.addEventListener('keypress', ()=>{
+inputCorPrincipal.addEventListener('keypress', () => {
     inputCorPrincipal.style.color = inputCorPrincipal.value;
     seletorCorPrincipal.value = inputCorPrincipal.value
 })
 
-inputCorSegundaria.addEventListener('keypress', ()=>{
+inputCorSegundaria.addEventListener('keypress', () => {
     inputCorSegundaria.style.color = inputCorSegundaria.value;
 })
 
-inputCorTerciaria.addEventListener('keypress', ()=>{
+inputCorTerciaria.addEventListener('keypress', () => {
     inputCorTerciaria.style.color = inputCorTerciaria.value;
 })
 
 function validaInput(input, mensagemInvalida) {
-    if(!input){
+    if (!input) {
         mensagemInvalida.classList.remove('input-hidden');
         return false;
     }
@@ -84,15 +84,15 @@ async function buscaClienteAPI(cpfCliente) {
         .catch(error => {
             console.log('Fetch Error:', error);
         });
-        return idCliente;
+    return idCliente;
 }
 
 async function atualizaClienteAPI() {
-    localStorage.setItem('usuario', inputNome.value)
-    localStorage.setItem('username', inputUsername.value)
-    localStorage.setItem('corPrincipal', inputCorPrincipal.value)
-    localStorage.setItem('corSegundaria', inputCorSegundaria.value)
-    localStorage.setItem('corTerciaria', inputCorTerciaria.value)
+    localStorage.setItem('usuario', inputNome.value);
+    localStorage.setItem('username', inputUsername.value);
+    localStorage.setItem('corPrincipal', inputCorPrincipal.value);
+    localStorage.setItem('corSegundaria', inputCorSegundaria.value);
+    localStorage.setItem('corTerciaria', inputCorTerciaria.value);
 
     await fetch(`${urlBase}/atualizar`, {
         method: 'PUT',
@@ -110,25 +110,25 @@ async function atualizaClienteAPI() {
             'Content-type': 'application/json; charset=UTF-8',
         },
     })
-    
+
 }
 
-btnAtualizar.addEventListener('click', ()=>{
+btnAtualizar.addEventListener('click', () => {
     const nome = inputNome.value;
     const username = inputUsername.value;
     const senha = inputSenha.value;
-    if(validaInput(nome, mensagemNomeInvalido) && validaInput(username, mensagemUsernameInvalido)&&validaInput(senha, mensagemSenhaInvalida)&&validaInput(inputCorPrincipal,mensagemCorInvalida)&&validaInput(inputCorSegundaria,mensagemCorInvalida)&&validaInput(inputCorTerciaria,mensagemCorInvalida)){
-        atualizaClienteAPI()
-        alert('Alteração concluída!')
+    if (validaInput(nome, mensagemNomeInvalido) && validaInput(username, mensagemUsernameInvalido) && validaInput(senha, mensagemSenhaInvalida) && validaInput(inputCorPrincipal, mensagemCorInvalida) && validaInput(inputCorSegundaria, mensagemCorInvalida) && validaInput(inputCorTerciaria, mensagemCorInvalida)) {
+        atualizaClienteAPI();
+        alert('Alteração concluída!');
         location.replace("mobile.html", "_blank");
     }
-    else{
-        validaInput(nome, mensagemNomeInvalido)
-        validaInput(username, mensagemUsernameInvalido)
-        validaInput(senha, mensagemSenhaInvalida)
-        validaInput(inputCorPrincipal,mensagemCorInvalida)
-        validaInput(inputCorSegundaria,mensagemCorInvalida)
-        validaInput(inputCorTerciaria,mensagemCorInvalida)
-        alert('Alteração com erro!')
+    else {
+        validaInput(nome, mensagemNomeInvalido);
+        validaInput(username, mensagemUsernameInvalido);
+        validaInput(senha, mensagemSenhaInvalida);
+        validaInput(inputCorPrincipal, mensagemCorInvalida);
+        validaInput(inputCorSegundaria, mensagemCorInvalida);
+        validaInput(inputCorTerciaria, mensagemCorInvalida);
+        alert('Alteração com erro!');
     }
 })

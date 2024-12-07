@@ -9,7 +9,7 @@ const mensagemCpfInvalido = document.querySelector('.cpf-invalido');
 const mensagemUsernameInvalido = document.querySelector('.username-invalido');
 const mensagemSenhaInvalida = document.querySelector('.senha-invalida');
 
-const urlBase = 'http://localhost:8080/apiCliente'
+const urlBase = 'http://localhost:8080/apiCliente';
 
 function validaCPF(cpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
@@ -36,7 +36,6 @@ function validaCPF(cpf) {
 
     // Verifica se os dois dígitos verificadores são corretos
     return digito1 === parseInt(cpf[9]) && digito2 === parseInt(cpf[10]);
-
 }
 
 async function cadastrarCliente(nome, cpf, username, senha) {
@@ -80,11 +79,11 @@ async function buscaClienteAPI(cpfCliente, usuario) {
             console.log('Fetch Error:', error);
         });
 
-        if (respostaUsuario){
-            mensagemUsernameInvalido.classList.remove('input-hidden');
-            mensagemUsernameInvalido.textContent = 'Usuario já cadastrado';
-        }
-    return respostaCPF || respostaUsuario ? true : false
+    if (respostaUsuario) {
+        mensagemUsernameInvalido.classList.remove('input-hidden');
+        mensagemUsernameInvalido.textContent = 'Usuario já cadastrado';
+    }
+    return respostaCPF || respostaUsuario ? true : false;
 }
 
 inputCpf.addEventListener('input', function (e) {
@@ -111,7 +110,7 @@ btnCadastro.addEventListener('click', async () => {
     const senha = inputSenha.value;
 
     function validaInput(input, mensagemInvalida) {
-        if(!input){
+        if (!input) {
             mensagemInvalida.classList.remove('input-hidden');
             return false;
         }
@@ -119,25 +118,25 @@ btnCadastro.addEventListener('click', async () => {
         return true;
     }
 
-    if(validaInput(nome, mensagemNomeInvalido) && validaInput(username, mensagemUsernameInvalido) && validaInput(validaCPF(cpf), mensagemCpfInvalido) && validaInput(senha, mensagemSenhaInvalida)){
-        if(await buscaClienteAPI(cpf, username) === false){
-            cadastrarCliente(nome,cpf,username,senha)
-            alert('Usuario cadastrado')
+    if (validaInput(nome, mensagemNomeInvalido) && validaInput(username, mensagemUsernameInvalido) && validaInput(validaCPF(cpf), mensagemCpfInvalido) && validaInput(senha, mensagemSenhaInvalida)) {
+        if (await buscaClienteAPI(cpf, username) === false) {
+            cadastrarCliente(nome, cpf, username, senha);
+            alert('Usuario cadastrado');
         }
-        else{
-            alert('Existe no Banco')
+        else {
+            alert('Existe no Banco');
         }
     }
     else {
-        validaInput(nome, mensagemNomeInvalido)
-        validaInput(username, mensagemUsernameInvalido)
-        validaInput(validaCPF(cpf), mensagemCpfInvalido)
-        validaInput(senha, mensagemSenhaInvalida)
-        if(!cpf || !validaCPF(cpf)){
-            alert('CPF inválido!')
+        validaInput(nome, mensagemNomeInvalido);
+        validaInput(username, mensagemUsernameInvalido);
+        validaInput(validaCPF(cpf), mensagemCpfInvalido);
+        validaInput(senha, mensagemSenhaInvalida);
+        if (!cpf || !validaCPF(cpf)) {
+            alert('CPF inválido!');
         }
-        else{
-            alert('Esse CPF já está cadastrado no sistema!')
+        else {
+            alert('Esse CPF já está cadastrado no sistema!');
         }
     }
 })

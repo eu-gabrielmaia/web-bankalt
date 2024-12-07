@@ -6,7 +6,7 @@ const mensagemCpfInvalido = document.querySelector('.cpf-invalido');
 const mensagemSenhaInvalida = document.querySelector('.senha-invalida');
 
 document.addEventListener("DOMContentLoaded", () => {
-    if(localStorage.getItem('cpf')){
+    if (localStorage.getItem('cpf')) {
         location.replace("mobile.html", "_blank");
     }
 })
@@ -61,9 +61,9 @@ btnLogin.addEventListener('click', async () => {
     const cpf = inputCpf.value;
     const senha = inputSenha.value;
     const resposta = await getCodigoAPI(cpf);
-    if(resposta !== null){
+    if (resposta !== null) {
         if (validaCPF(cpf) && senha) {
-            try{
+            try {
                 if (resposta.cpf === cpf && resposta.senha === senha) {
                     mensagemSenhaInvalida.classList.add('input-hidden');
                     let resultado = confirm("Tudo certo por aqui! Quer ser direciado ao QR CODE?");
@@ -85,10 +85,10 @@ btnLogin.addEventListener('click', async () => {
                     mensagemSenhaInvalida.textContent = "Tente outra senha";
                 }
             }
-            catch(err){
+            catch (err) {
                 console.log(err);
             }
-            finally{
+            finally {
                 console.log("Processo finalizado")
             }
         }
@@ -99,7 +99,7 @@ btnLogin.addEventListener('click', async () => {
             mensagemSenhaInvalida.classList.remove('input-hidden');
         }
     }
-    else{
+    else {
         alert("Usuario não encontrado!")
     }
 })

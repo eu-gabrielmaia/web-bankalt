@@ -5,7 +5,7 @@ const btnAtualizar = document.querySelector('#atualizar')
 const btnSair = document.querySelector('#sair')
 
 
-const urlBase = 'http://localhost:8080/apiCliente'
+const urlBase = 'http://localhost:8080/apiCliente';
 
 const nomeAtual = `${localStorage.getItem('usuario')}`;
 const usernameAtual = `${localStorage.getItem('username')}`;
@@ -24,29 +24,29 @@ async function buscaClienteAPI(cpfCliente) {
         .catch(error => {
             console.log('Fetch Error:', error);
         });
-        return idCliente;
+    return idCliente;
 }
 
 async function excluiClienteAPI(cpfCliente) {
-    const idCliente = await buscaClienteAPI(cpfCliente)
+    const idCliente = await buscaClienteAPI(cpfCliente);
 
-        await fetch(`${urlBase}/excluir/id/${idCliente}`, { method: 'DELETE' })
-          .then(response => console.log(response.status))
-          .catch(error => console.error('Fetch Error:',error));
+    await fetch(`${urlBase}/excluir/id/${idCliente}`, { method: 'DELETE' })
+        .then(response => console.log(response.status))
+        .catch(error => console.error('Fetch Error:', error));
 }
 
-btnDeletar.addEventListener('click', ()=> {
+btnDeletar.addEventListener('click', () => {
     excluiClienteAPI(cpfAtual);
     localStorage.clear();
     alert('Usuario deletado com sucesso!');
     location.replace("login.html", "_blank");
 })
 
-btnAtualizar.addEventListener('click', ()=>{
+btnAtualizar.addEventListener('click', () => {
     location.replace("atualizacao.html", "_blank");
 })
 
-btnSair.addEventListener('click', ()=>{
+btnSair.addEventListener('click', () => {
     localStorage.clear();
     location.replace("login.html", "_blank");
 })

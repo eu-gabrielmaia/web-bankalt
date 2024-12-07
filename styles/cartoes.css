@@ -1,6 +1,6 @@
 @import url(style.css);
 
-.secao-cartoes{
+.secao-cartoes {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,35 +11,35 @@
     margin: 60px 0;
 }
 
-.cartoes-titulo{
+.cartoes-titulo {
     font-size: 3em;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.cartoes-subtitulo{
+.cartoes-subtitulo {
     font-size: 1.5em;
     font-weight: 600;
     line-height: 150%;
 }
 
 
-.secao-vantagens{
+.secao-vantagens {
     padding: 50px;
     background-color: var(--roxo-claro);
     color: var(--roxo);
     display: flex;
     flex-direction: column;
     gap: 54px;
-    
-    .vantagens-titulo{
+
+    .vantagens-titulo {
         text-align: center;
         font-size: 3em;
         font-weight: 700;
         text-transform: uppercase;
     }
 
-    .vantagens-box{
+    .vantagens-box {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -48,44 +48,44 @@
     }
 }
 
-.cartao-apresentao{
+.cartao-apresentao {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 0px;
 
-    & div{
+    & div {
         width: 100%;
 
 
-        & p{
+        & p {
             font-size: 1.5em;
             padding: 0;
         }
 
-        & img{
+        & img {
             width: 100%;
             height: 550px;
         }
     }
 }
 
-.apresentacao-inversa{
+.apresentacao-inversa {
     flex-direction: row-reverse;
 }
 
-.cartao-apresentao-textos{
+.cartao-apresentao-textos {
     font-size: 1em;
 }
 
 
 
-.cartoes-titulo{
+.cartoes-titulo {
     text-align: center;
     margin: 15px;
 }
 
-.cartoes-texto{
+.cartoes-texto {
     font-size: 1.5em;
     font-weight: 500;
     line-height: 110%;
@@ -94,7 +94,7 @@
 }
 
 
-.secao-cartao-premium{
+.secao-cartao-premium {
     text-align: justify;
     padding: 80px;
     display: flex;
@@ -105,28 +105,28 @@
     color: var(--branco);
 }
 
-.cartao-premium-box{
+.cartao-premium-box {
     padding: 50px;
     border-radius: 20px;
     background-color: var(--branco);
     color: var(--roxo);
 }
 
-.cartao-premium-titulo{
+.cartao-premium-titulo {
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 25px;
     text-align: center;
 }
 
-.cartao-premium-texto{
+.cartao-premium-texto {
     text-align: left;
     font-size: 1.5em;
     font-weight: 500;
     line-height: 150%;
 }
 
-.cartao-premium-vantagens{
+.cartao-premium-vantagens {
     font-size: 1.25em;
     line-height: 110%;
     display: flex;
@@ -135,76 +135,76 @@
     padding: 50px 0;
     width: 100%;
 
-    .premium-vantagens-box{
+    .premium-vantagens-box {
         display: flex;
         flex-direction: column;
         gap: 36px;
     }
 
-    & .premium-vantagens-item{
+    & .premium-vantagens-item {
         display: flex;
         align-items: center;
         gap: 15px;
     }
 
-    & img{
+    & img {
         width: 40px;
         height: 40px;
     }
 
-    & h3{
+    & h3 {
         font-weight: 600;
     }
 
-    & p{
+    & p {
         font-weight: 300;
     }
-    
+
 }
 
 @media (max-width: 1250px) {
-    .cartao-apresentao{
+    .cartao-apresentao {
         flex-direction: column;
     }
 
-    .cartao-apresentao-textos{
+    .cartao-apresentao-textos {
         padding: 50px 0px;
     }
-    
-    .cartao-premium-vantagens{
+
+    .cartao-premium-vantagens {
         flex-direction: column;
         gap: 36px;
     }
 }
 
 @media (max-width: 850px) {
-    .secao-cartao-premium{
+    .secao-cartao-premium {
         padding: 50px 50px;
     }
 
-    .cartao-apresentao{
-        
-        & div{
-            & img{
+    .cartao-apresentao {
+
+        & div {
+            & img {
                 height: 450px;
             }
         }
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
 
-    .secao-cartao-premium{
+    .secao-cartao-premium {
         padding: 50px 25px;
     }
 
-    .cartao-premium-box{
+    .cartao-premium-box {
         padding: 40px 40px;
     }
 
-    .cartao-apresentao{
-        & div{
-            & img{
+    .cartao-apresentao {
+        & div {
+            & img {
                 height: 300px;
             }
         }
@@ -212,8 +212,8 @@
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    .secao-cartao-premium{
-        & h3{
+    .secao-cartao-premium {
+        & h3 {
             color: var(--light);
         }
     }
